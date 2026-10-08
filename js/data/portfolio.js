@@ -24,14 +24,17 @@ export const portfolio = {
   },
 
   about: {
-    eyebrow: "A little about me",
-    title: "Thoughtful code. Useful experiences.",
+    eyebrow: "About me",
+    title: "Passionate Web Developer",
     description:
-      "I build modern, fast, responsive web applications. The work focuses on thoughtful interface implementation, practical JavaScript, and how a product reads and behaves across screen sizes.",
-    principles: [
-      { title: "Responsive by default", description: "Layouts that adapt with care from small screens to wide displays." },
-      { title: "Built for people", description: "Clear structure, useful interactions, and accessible foundations." },
-      { title: "Performance conscious", description: "A lightweight approach using native web technologies." },
+      "I'm a dedicated web developer with a passion for building clean, user-friendly and performant websites. I enjoy solving problems and turning creative ideas into functional products.",
+    image: "assets/images/profile/Desktop mode.png",
+    imageAlt: "Swapon Kumar Das working at a laptop",
+    features: [
+      { icon: "code", title: "Clean Code", description: "Maintainable" },
+      { icon: "creative", title: "Creative", description: "Design Mindset" },
+      { icon: "learning", title: "Fast Learner", description: "Always Improving" },
+      { icon: "team", title: "Team Player", description: "Better Together" },
     ],
   },
 
@@ -70,28 +73,28 @@ export const portfolio = {
 
   projects: [
     {
-      title: "Dashboard UI Concept",
-      description: "A general dashboard layout study with navigation, summary metrics, and data panels.",
+      title: "SaaS Dashboard",
+      type: "Demo project · UI concept",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
       image: "assets/images/projects/Dashboard.png",
-      imageAlt: "Generic dashboard interface concept with navigation, metric cards, and charts",
+      imageAlt: "Demo dashboard interface with a navigation sidebar, metric cards, and charts",
       liveUrl: "https://www.facebook.com/olpo.kotha.581/",
-      tags: ["Dashboard UI", "Concept preview"],
       placeholder: true,
     },
     {
-      title: "Analytics Dashboard Concept",
-      description: "A second presentation of the supplied dashboard visual, focused on reading metrics and charts.",
+      title: "Analytics Dashboard",
+      type: "Demo project · UI concept",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
       image: "assets/images/projects/Dashboard.png",
-      imageAlt: "Generic analytics dashboard concept with metric cards and charts",
-      tags: ["Analytics layout", "Concept preview"],
+      imageAlt: "Demo analytics dashboard interface with summary metrics and charts",
       placeholder: true,
     },
     {
-      title: "Admin Dashboard Concept",
-      description: "A layout concept showing how navigation and data summaries can share a compact workspace.",
+      title: "Admin Dashboard",
+      type: "Demo project · UI concept",
+      technologies: ["HTML5", "CSS3", "JavaScript"],
       image: "assets/images/projects/Dashboard.png",
-      imageAlt: "Generic admin dashboard concept with sidebar navigation and data summaries",
-      tags: ["Admin layout", "Concept preview"],
+      imageAlt: "Demo admin dashboard interface with sidebar navigation and data summaries",
       placeholder: true,
     },
   ],

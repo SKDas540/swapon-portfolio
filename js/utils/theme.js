@@ -8,9 +8,13 @@ export function initTheme() {
     document.documentElement.dataset.theme = theme;
     const isDark = theme === "dark";
     const themeColor = document.querySelector('meta[name="theme-color"]');
-    if (themeColor) themeColor.setAttribute("content", isDark ? "#101a2c" : "#dbeafe");
+    if (themeColor)
+      themeColor.setAttribute("content", isDark ? "#101a2c" : "#dbeafe");
     button.setAttribute("aria-pressed", String(isDark));
-    button.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} mode`);
+    button.setAttribute(
+      "aria-label",
+      `Switch to ${isDark ? "light" : "dark"} mode`,
+    );
     const label = button.querySelector(".theme-toggle__label");
     if (label) label.textContent = isDark ? "Light" : "Dark";
     if (persist) {
@@ -24,7 +28,8 @@ export function initTheme() {
 
   applyTheme(document.documentElement.dataset.theme || "light", false);
   button.addEventListener("click", () => {
-    const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    const nextTheme =
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     applyTheme(nextTheme);
   });
 }

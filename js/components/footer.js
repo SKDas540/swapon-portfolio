@@ -6,14 +6,39 @@ const footerIcons = {
 };
 
 function renderFooterSocialLink(link, personal = {}) {
-  const type = link.type?.toLowerCase() || link.label?.toLowerCase();
-  const icon = footerIcons[type] || footerIcons[link.label?.toLowerCase()];
-  const href = type === "email" ? `mailto:${personal.email || ""}` : link.url;
+  const email = link.type?.toLowerCase() === "email" || link.label?.toLowerCase() === "email";
+  const label = email ? "Email" : link.label;
+  const type = email ? "email" : link.type?.toLowerCase() || label?.toLowerCase();
+  const icon = footerIcons[type] || footerIcons[label?.toLowerCase()];
+  const href = email ? (personal.email ? `mailto:${personal.email}` : "") : link.url;
 
-  if (!icon || !href || href === "mailto:") return "";
+  if (!icon || !href || href === "#") return "";
 
   const isEmail = href.startsWith("mailto:");
-  return `<a class="footer__social-link" href="${href}" aria-label="${link.label}"${isEmail ? "" : ' target="_blank" rel="noreferrer"'}>${icon}</a>`;
+  return `<a class="footer__social-link" href="${href}" aria-label="${label}"${isEmail ? "" : ' target="_blank" rel="noreferrer"'}>${icon}</a>`;
+}
+
+function renderFooterSocials(socialLinks = [], personal = {}) {
+  const requiredIcons = [
+    { type: "facebook", label: "Facebook" },
+    { type: "github", label: "GitHub" },
+    { type: "linkedin", label: "LinkedIn" },
+    { type: "email", label: "Email" },
+  ];
+  const links = requiredIcons.map(({ type, label }) => {
+    const link = socialLinks.find((item) =>
+      item.label?.toLowerCase() === type || item.type?.toLowerCase() === type,
+    );
+
+    if (link) return renderFooterSocialLink(link, personal);
+    if (type === "email" && personal.email) {
+      return renderFooterSocialLink({ label: "Email", type: "email" }, personal);
+    }
+
+    return `<span class="footer__social-link footer__social-link--unavailable" role="img" aria-label="${label}">${footerIcons[type]}</span>`;
+  });
+
+  return links.join("");
 }
 
 export function renderFooter(data = {}) {
@@ -38,8 +63,8 @@ export function renderFooter(data = {}) {
         ${footerNavigation.map((item) => `<a href="${item.href}">${item.label}</a>`).join("")}
       </nav>
 
-      <div class="footer__socials" aria-label="Social and contact links">
-        ${(data.socialLinks || []).map((link) => renderFooterSocialLink(link, data.personal)).join("")}
+      <div class="footer__socials" role="group" aria-label="Social and contact links">
+        ${renderFooterSocials(data.socialLinks, data.personal)}
       </div>
 
       <div class="footer__signature">
