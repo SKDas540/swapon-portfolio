@@ -1,54 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Swapon Kumar Das is a Full Stack Developer creating modern, fast and responsive web applications.">
-  <meta name="author" content="Swapon Kumar Das">
-  <meta name="theme-color" content="#dbeafe">
-  <meta property="og:title" content="Swapon Kumar Das | Full Stack Developer">
-  <meta property="og:description" content="Modern, fast and responsive web applications built with care.">
-  <meta property="og:type" content="website">
-  <title>Swapon Kumar Das | Full Stack Developer</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Swapon Kumar Das is a Full Stack Developer creating modern, fast and responsive web applications."
+    />
+    <meta name="author" content="Swapon Kumar Das" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#dbeafe" />
+    <meta
+      property="og:title"
+      content="Swapon Kumar Das — Full Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Swapon Kumar Das is a Full Stack Developer creating modern, fast and responsive web applications."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Swapon Kumar Das Portfolio" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Swapon Kumar Das — Full Stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Swapon Kumar Das is a Full Stack Developer creating modern, fast and responsive web applications."
+    />
+    <title>Swapon Kumar Das — Full Stack Developer</title>
 
-  <script>
-    (() => {
-      let theme;
-      try {
-        theme = localStorage.getItem("portfolio-theme");
-      } catch {
-        // Storage can be unavailable in restricted browser contexts.
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Swapon Kumar Das",
+        "jobTitle": "Full Stack Developer",
+        "description": "Swapon Kumar Das is a Full Stack Developer creating modern, fast and responsive web applications."
       }
-      if (theme !== "light" && theme !== "dark") {
-        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
-      document.documentElement.dataset.theme = theme;
-    })();
-  </script>
+    </script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      (() => {
+        let theme;
+        try {
+          theme = localStorage.getItem("portfolio-theme");
+        } catch {
+          // Storage can be unavailable in restricted browser contexts.
+        }
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/main.css">
-</head>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-<body>
-  <header id="header" class="site-header"></header>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-  <main>
-    <section id="hero" aria-labelledby="hero-title"></section>
-    <section id="about" aria-labelledby="about-title"></section>
-    <section id="skills" aria-labelledby="skills-title"></section>
-    <section id="projects" aria-labelledby="projects-title"></section>
-    <section id="services" aria-labelledby="services-title"></section>
-    <section id="contact" aria-labelledby="contact-title"></section>
-  </main>
+  <body>
+    <header id="header" class="site-header"></header>
 
-  <footer id="footer"></footer>
+    <main>
+      <section id="hero" aria-labelledby="hero-title"></section>
+      <section id="about" aria-labelledby="about-title"></section>
+      <section id="skills" aria-labelledby="skills-title"></section>
+      <section id="projects" aria-labelledby="projects-title"></section>
+      <section id="services" aria-labelledby="services-title"></section>
+      <section id="contact" aria-labelledby="contact-title"></section>
+    </main>
 
-  <script type="module" src="js/main.js"></script>
-</body>
+    <footer id="footer"></footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
