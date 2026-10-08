@@ -21,8 +21,12 @@
   color: var(--color-primary-600);
 }
 .theme-toggle span:first-child {
-  font-size: 1.1rem;
+  font-size: 2.2rem;
   line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .theme-toggle span:first-child { font-size: 2.2rem; }
 }
 
 body::before,
