@@ -1,0 +1,83 @@
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+  padding: .875rem 0;
+}
+
+.navbar {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: var(--color-nav-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+}
+
+.brand { display: inline-flex; flex: 0 0 auto; }
+.nav-actions { display: flex; align-items: center; gap: .75rem; }
+.nav-links a:focus-visible { border-radius: 2px; }
+.nav-toggle { display: none; }
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--color-primary-600);
+}
+
+@media (max-width: 767px) {
+  .navbar { position: relative; gap: .75rem; padding-inline: .875rem; }
+  .nav-actions { margin-left: auto; }
+  .nav-actions .btn { display: none; }
+  .nav-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+    display: grid;
+    place-content: center;
+    gap: 4px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface-raised);
+  }
+  .nav-toggle span { width: 1.125rem; height: 2px; background: currentColor; }
+  .nav-links {
+    position: absolute;
+    inset: calc(100% + .5rem) 0 auto;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .25rem;
+    padding: .75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-raised);
+    box-shadow: var(--shadow-md);
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links a { padding: .65rem .75rem; }
+  .nav-links a:hover, .nav-links a.active { background: var(--color-surface); }
+}
+
+@media (min-width: 768px) {
+  .nav-links { display: flex; }
+}
+
+@media (max-width: 380px) {
+  .theme-toggle__label { display: none; }
+  .nav-actions { gap: .4rem; }
+}

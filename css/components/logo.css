@@ -1,0 +1,146 @@
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  position: relative;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation:
+    logoRotate 5s linear infinite,
+    logoFloat 3s ease-in-out infinite;
+
+  filter: drop-shadow(0 8px 15px rgba(126, 45, 255, 0.25));
+
+  transition: filter 0.4s ease;
+}
+
+/* =========================
+   PETAL
+========================= */
+
+.petal {
+  position: absolute;
+
+  width: 10px;
+  height: 22px;
+
+  left: 50%;
+  top: 50%;
+
+  border-radius: 50% 50% 45% 45%;
+
+  background: linear-gradient(135deg, #c45cff 0%, #963cff 45%, #6724e8 100%);
+
+  transform-origin: 50% 100%;
+
+  box-shadow:
+    inset 2px 2px 4px rgba(255, 255, 255, 0.35),
+    0 4px 10px rgba(119, 45, 255, 0.25);
+
+  animation: petalPulse 2s ease-in-out infinite;
+}
+
+/* =========================
+   PETAL POSITION
+========================= */
+
+.petal-1 {
+  transform: translate(-50%, -100%) rotate(0deg);
+  animation-delay: 0s;
+}
+
+.petal-2 {
+  transform: translate(-50%, -100%) rotate(72deg);
+  animation-delay: 0.15s;
+}
+
+.petal-3 {
+  transform: translate(-50%, -100%) rotate(144deg);
+  animation-delay: 0.3s;
+}
+
+.petal-4 {
+  transform: translate(-50%, -100%) rotate(216deg);
+  animation-delay: 0.45s;
+}
+
+.petal-5 {
+  transform: translate(-50%, -100%) rotate(288deg);
+  animation-delay: 0.6s;
+}
+
+/* =========================
+   360° ROTATION
+========================= */
+
+@keyframes logoRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   FLOATING EFFECT
+========================= */
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -5px;
+  }
+}
+
+/* =========================
+   PETAL PULSE
+========================= */
+
+@keyframes petalPulse {
+  0%,
+  100% {
+    scale: 1;
+    opacity: 0.9;
+  }
+
+  50% {
+    scale: 1.12;
+    opacity: 1;
+  }
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+/* .logo:hover {
+  animation:
+    logoRotate 2.8s linear infinite,
+    logoFloat 2.5s ease-in-out infinite;
+
+  filter: drop-shadow(0 0 18px rgba(145, 55, 255, 0.65));
+} */
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .logo,
+  .petal {
+    animation: none;
+  }
+}

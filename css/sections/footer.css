@@ -1,0 +1,18 @@
+#footer {
+  color: var(--color-white);
+  background: var(--gradient-footer);
+}
+
+.footer__inner {
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.footer__top-link { text-decoration: underline; text-underline-offset: .2em; }
+
+@media (max-width: 480px) {
+  .footer__inner { align-items: flex-start; flex-direction: column; justify-content: center; }
+}
