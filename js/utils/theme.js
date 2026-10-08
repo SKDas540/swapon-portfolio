@@ -7,6 +7,8 @@ export function initTheme() {
   const applyTheme = (theme, persist = true) => {
     document.documentElement.dataset.theme = theme;
     const isDark = theme === "dark";
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    if (themeColor) themeColor.setAttribute("content", isDark ? "#101a2c" : "#dbeafe");
     button.setAttribute("aria-pressed", String(isDark));
     button.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} mode`);
     const label = button.querySelector(".theme-toggle__label");

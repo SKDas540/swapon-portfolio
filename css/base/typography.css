@@ -6,7 +6,7 @@ body {
   background: transparent;
   font-family: var(--font-sans);
   font-size: var(--text-base);
-  line-height: 1.6;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -50,11 +50,11 @@ textarea { min-height: 8rem; resize: vertical; }
   text-transform: uppercase;
 }
 
-.script-text {
-  font-family: var(--font-script);
-}
+a:not([class]) { color: var(--color-primary-600); text-underline-offset: .2em; }
+
+::placeholder { color: var(--color-muted); opacity: .8; }
 
 ::selection {
-  color: var(--color-white);
-  background: var(--color-primary-600);
+  color: var(--color-selection-foreground);
+  background: var(--color-selection-background);
 }

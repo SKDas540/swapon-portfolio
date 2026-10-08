@@ -3,18 +3,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 0 20px;
+  gap: var(--space-2);
+  padding: 0 var(--space-5);
   border-radius: var(--radius-pill);
   font-size: var(--text-sm);
   font-weight: var(--fw-semibold);
   transition: transform var(--duration-normal) var(--ease-standard),
               box-shadow var(--duration-normal) var(--ease-standard),
-              background var(--duration-normal) var(--ease-standard);
+              background var(--duration-normal) var(--ease-standard),
+              color var(--duration-normal) var(--ease-standard),
+              border-color var(--duration-normal) var(--ease-standard);
 }
 
 .btn-primary {
-  color: var(--color-white);
+  color: var(--color-on-primary);
   background: var(--gradient-primary);
   box-shadow: var(--shadow-blue);
 }
@@ -28,5 +30,8 @@
 .btn:hover {
   transform: translateY(-2px);
 }
+
+.btn:active { transform: translateY(0); }
+.btn:disabled { transform: none; cursor: not-allowed; }
 
 .btn:focus-visible { outline-offset: 4px; }

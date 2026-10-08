@@ -60,7 +60,3 @@ button { color: inherit; }
   outline: 3px solid var(--color-focus);
   outline-offset: 3px;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}

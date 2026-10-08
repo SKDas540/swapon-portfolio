@@ -1,0 +1,14 @@
+.social-link {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  color: var(--color-text-2);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.social-link:hover, .social-link:focus-visible { color: var(--color-primary-600); }
+.social-link > span:first-child { width: 2rem; height: 2rem; display: grid; place-items: center; border: 1px solid var(--color-border); border-radius: 50%; }
+.social-link__label { text-decoration: none; }

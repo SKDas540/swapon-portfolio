@@ -5,27 +5,37 @@
 .fade-up {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity .6s var(--ease-standard),
-              transform .6s var(--ease-standard);
+  transition: opacity 650ms var(--ease-standard),
+              transform 650ms var(--ease-standard);
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 650ms var(--ease-standard), transform 650ms var(--ease-standard);
 }
 
 .fade-in {
   opacity: 0;
-  transition: opacity .6s var(--ease-standard);
+  transition: opacity 650ms var(--ease-standard);
 }
 
 .slide-in {
   opacity: 0;
   transform: translateX(-1rem);
-  transition: opacity .6s var(--ease-standard), transform .6s var(--ease-standard);
+  transition: opacity 650ms var(--ease-standard), transform 650ms var(--ease-standard);
 }
 
 .fade-up.is-visible,
+.reveal-item.is-visible,
 .fade-in.is-visible,
 .slide-in.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+.about-principle:nth-child(2) { transition-delay: 90ms; }
+.about-principle:nth-child(3) { transition-delay: 180ms; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -33,5 +43,5 @@
     transition-duration: .01ms !important;
     scroll-behavior: auto !important;
   }
-  .fade-up, .fade-in, .slide-in { opacity: 1; transform: none; }
+  .fade-up, .reveal-item, .fade-in, .slide-in { opacity: 1; transform: none; }
 }

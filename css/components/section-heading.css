@@ -1,0 +1,5 @@
+.section-heading { max-width: 45rem; }
+.section-heading__eyebrow { display: flex; align-items: center; gap: .65rem; color: var(--color-primary-600); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: .12em; text-transform: uppercase; }
+.section-heading__eyebrow::after { width: 2rem; height: 1px; content: ""; background: currentColor; opacity: .7; }
+.section-heading__title { margin-top: .8rem; font-size: var(--text-3xl); letter-spacing: -.04em; }
+.section-heading__description { max-width: 56ch; margin-top: 1rem; color: var(--color-text-2); }

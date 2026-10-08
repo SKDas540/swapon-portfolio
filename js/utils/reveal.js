@@ -1,5 +1,5 @@
 export function initReveal() {
-  const items = document.querySelectorAll(".fade-up, .fade-in, .slide-in");
+  const items = document.querySelectorAll(".fade-up, .reveal-item, .fade-in, .slide-in");
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     items.forEach((item) => item.classList.add("is-visible"));
