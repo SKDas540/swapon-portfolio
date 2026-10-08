@@ -74,6 +74,7 @@ export const portfolio = {
       description: "A general dashboard layout study with navigation, summary metrics, and data panels.",
       image: "assets/images/projects/Dashboard.png",
       imageAlt: "Generic dashboard interface concept with navigation, metric cards, and charts",
+      liveUrl: "https://www.facebook.com/olpo.kotha.581/",
       tags: ["Dashboard UI", "Concept preview"],
       placeholder: true,
     },

@@ -5,9 +5,10 @@ export function renderProjectCard(project, index) {
   const links = [
     project.githubUrl ? `<a class="text-link" href="${project.githubUrl}" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>` : "",
   ].filter(Boolean).join("");
+  const previewContent = '<span>Live Preview</span><svg class="project-card__preview-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>';
   const preview = project.liveUrl
-    ? `<a class="btn btn-secondary project-card__preview" href="${project.liveUrl}" target="_blank" rel="noreferrer">Live preview <span aria-hidden="true">↗</span></a>`
-    : `<button class="btn btn-secondary project-card__preview" type="button" disabled>Preview unavailable</button>`;
+    ? `<a class="btn btn-primary project-card__preview" href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" aria-label="Live Preview for ${project.title}">${previewContent}</a>`
+    : `<button class="btn btn-primary project-card__preview" type="button" disabled aria-label="Live Preview unavailable for ${project.title}">${previewContent}</button>`;
 
   return `
     <article class="project-card card card--hover fade-up${project.placeholder ? " project-card--placeholder" : ""}"${project.placeholder ? ' data-placeholder="true"' : ""}>
