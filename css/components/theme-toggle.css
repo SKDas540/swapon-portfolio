@@ -25,6 +25,17 @@
   line-height: 1;
 }
 
+@media (max-width: 385px) {
+  .theme-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    padding: 0;
+    border-radius: 50%;
+  }
+}
+
 @media (max-width: 900px) {
   .theme-toggle span:first-child { font-size: 2.2rem; }
 }
