@@ -6,20 +6,9 @@ export function initNavigation(data) {
   header.innerHTML = `
     <div class="container">
       <nav class="navbar" aria-label="Main navigation">
-        <a href="#hero" class="brand" aria-label="${data.personal.name} home">
+        <a href="#hero" class="brand" aria-label="Home">
           <span class="brand__monogram" aria-hidden="true">SKD</span>
-          <span class="brand__name">${data.personal.name}</span>
         </a>
-
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="primary-navigation"
-          aria-label="Open navigation"
-        >
-          <span></span><span></span><span></span>
-        </button>
 
         <div class="nav-links" id="primary-navigation">
           ${data.navigation.map((item) => `<a href="${item.href}">${item.label}</a>`).join("")}
@@ -37,6 +26,17 @@ export function initNavigation(data) {
             ><span class="theme-toggle__label">Dark</span>
           </button>
           <a href="#contact" class="btn btn-primary">Hire Me</a>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+            aria-label="Open navigation"
+          >
+            <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
         </div>
       </nav>
     </div>
@@ -53,7 +53,7 @@ export function initNavigation(data) {
       link.classList.add("active");
       link.setAttribute("aria-current", "location");
       closeMenu();
-      if (window.matchMedia("(max-width: 900px)").matches) {
+      if (window.matchMedia("(max-width: 760px)").matches) {
         const destination = document.querySelector(link.hash);
         if (destination) {
           destination.setAttribute("tabindex", "-1");
@@ -90,7 +90,7 @@ export function initNavigation(data) {
     toggle.focus();
   });
 
-  const desktopQuery = window.matchMedia("(min-width: 901px)");
+  const desktopQuery = window.matchMedia("(min-width: 761px)");
   desktopQuery.addEventListener?.("change", (event) => {
     if (event.matches) closeMenu();
   });
