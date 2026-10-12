@@ -5,7 +5,7 @@ const footerIcons = {
   github: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 0 0-2.8 17.6c.5.1.6-.2.6-.4v-1.6c-2.5.5-3-.6-3.2-1.1-.1-.3-.6-1.1-1-1.3-.3-.2-.8-.6 0-.6.7 0 1.2.7 1.4 1 .8 1.3 2.1.9 2.7.7.1-.6.4-1 .7-1.2-2.2-.2-4.4-1.1-4.4-4.9 0-1.1.4-2 1-2.7-.1-.2-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5.1 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.5.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.2 4.7-4.4 4.9.4.3.7.8.7 1.7v2.4c0 .2.1.5.6.4A9 9 0 0 0 12 3"/></svg>',
 };
 
-function renderFooterSocialLink(link, personal = {}) {
+function renderFooterSocialLink(link, personal = {}, linkClass = "footer__social-link") {
   const email = link.type?.toLowerCase() === "email" || link.label?.toLowerCase() === "email";
   const label = email ? "Email" : link.label;
   const type = email ? "email" : link.type?.toLowerCase() || label?.toLowerCase();
@@ -15,10 +15,10 @@ function renderFooterSocialLink(link, personal = {}) {
   if (!icon || !href || href === "#") return "";
 
   const isEmail = href.startsWith("mailto:");
-  return `<a class="footer__social-link" href="${href}" aria-label="${label}"${isEmail ? "" : ' target="_blank" rel="noreferrer"'}>${icon}</a>`;
+  return `<a class="${linkClass}" href="${href}" aria-label="${label}"${isEmail ? "" : ' target="_blank" rel="noreferrer"'}>${icon}</a>`;
 }
 
-function renderFooterSocials(socialLinks = [], personal = {}) {
+export function renderFooterSocials(socialLinks = [], personal = {}, linkClass = "footer__social-link") {
   const requiredIcons = [
     { type: "facebook", label: "Facebook" },
     { type: "github", label: "GitHub" },
@@ -30,12 +30,12 @@ function renderFooterSocials(socialLinks = [], personal = {}) {
       item.label?.toLowerCase() === type || item.type?.toLowerCase() === type,
     );
 
-    if (link) return renderFooterSocialLink(link, personal);
+    if (link) return renderFooterSocialLink(link, personal, linkClass);
     if (type === "email" && personal.email) {
-      return renderFooterSocialLink({ label: "Email", type: "email" }, personal);
+      return renderFooterSocialLink({ label: "Email", type: "email" }, personal, linkClass);
     }
 
-    return `<span class="footer__social-link footer__social-link--unavailable" role="img" aria-label="${label}">${footerIcons[type]}</span>`;
+    return `<span class="${linkClass} ${linkClass}--unavailable" role="img" aria-label="${label}">${footerIcons[type]}</span>`;
   });
 
   return links.join("");

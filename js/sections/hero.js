@@ -1,4 +1,4 @@
-import { renderSocialLink } from "../components/social-link.js";
+import { renderFooterSocials } from "../components/footer.js";
 
 export function renderHero(data) {
   const hero = document.querySelector("#hero");
@@ -23,7 +23,7 @@ export function renderHero(data) {
             <a class="btn btn-secondary" href="#contact">${data.hero.secondaryAction}</a>
           </div>
           <div class="hero__socials reveal-item">
-            ${data.socialLinks.map((link) => renderSocialLink(link, data.personal)).join("")}
+            ${renderFooterSocials(data.socialLinks, data.personal, "hero__social-link")}
           </div>
         </div>
 

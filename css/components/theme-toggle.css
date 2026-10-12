@@ -1,43 +1,72 @@
 .theme-toggle {
-  min-height: 2.75rem;
-  display: inline-flex;
+  position: relative;
+  width: 4.75rem;
+  height: 2.75rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  padding: 0 0.8rem;
+  gap: .125rem;
+  flex: 0 0 auto;
+  padding: .25rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
   color: var(--color-text);
-  background: var(--color-surface-raised);
+  background: var(--color-surface-2);
   cursor: pointer;
   transition:
     color var(--duration-normal) var(--ease-standard),
     background-color var(--duration-normal) var(--ease-standard),
-    border-color var(--duration-normal) var(--ease-standard);
+    border-color var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.theme-toggle::before {
+  position: absolute;
+  inset-block: .25rem;
+  left: .25rem;
+  width: calc((100% - .625rem) / 2);
+  border-radius: 50%;
+  background: var(--color-primary-600);
+  box-shadow: var(--shadow-sm);
+  content: "";
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+[data-theme="dark"] .theme-toggle::before {
+  transform: translateX(calc(100% + .125rem));
+}
+
+.theme-toggle__icon {
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  color: var(--color-muted);
+  transition: color var(--duration-normal) var(--ease-standard);
+}
+
+.theme-toggle__icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+[data-theme="light"] .theme-toggle__icon--sun,
+[data-theme="dark"] .theme-toggle__icon--moon {
+  color: var(--color-surface);
 }
 
 .theme-toggle:hover {
   border-color: var(--color-focus);
-  color: var(--color-primary-600);
-}
-.theme-toggle span:first-child {
-  font-size: 2.2rem;
-  line-height: 1;
+  box-shadow: var(--shadow-sm);
 }
 
-@media (max-width: 385px) {
-  .theme-toggle {
-    width: 2.75rem;
-    height: 2.75rem;
-    aspect-ratio: 1 / 1;
-    flex-shrink: 0;
-    padding: 0;
-    border-radius: 50%;
-  }
-}
-
-@media (max-width: 900px) {
-  .theme-toggle span:first-child { font-size: 2.2rem; }
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
 }
 
 body::before,
@@ -82,6 +111,11 @@ select {
   input,
   textarea,
   select {
+    transition: none;
+  }
+
+  .theme-toggle::before,
+  .theme-toggle__icon {
     transition: none;
   }
 }
