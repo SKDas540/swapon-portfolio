@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://swapon-portfolio.netlify.app/sitemap.xml
