@@ -7,7 +7,11 @@ export function initNavigation(data) {
     <div class="container">
       <nav class="navbar" aria-label="Main navigation">
         <a href="#hero" class="brand" aria-label="Home">
-          <span class="brand__monogram" aria-hidden="true">SKD</span>
+          <img
+            class="brand__logo"
+            src="assets/logo/SKD%20Logo%20and%20Icon.png"
+            alt="Swapon Kumar Das logo"
+          />
         </a>
 
         <div class="nav-links" id="primary-navigation">

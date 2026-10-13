@@ -1,4 +1,11 @@
 .brand { display: inline-flex; align-items: center; gap: .75rem; flex: 0 0 auto; }
+.brand__logo {
+  display: block;
+  height: clamp(2.2rem, 2.1vw, 3rem);
+  width: auto;
+  max-width: 14rem;
+  object-fit: contain;
+}
 .brand__monogram { color: var(--color-primary-600); font-size: 1.65rem; font-weight: var(--fw-semibold); letter-spacing: -.13em; }
 .brand__name { color: var(--color-heading); font-size: var(--text-sm); font-weight: var(--fw-semibold); white-space: nowrap; }
 
