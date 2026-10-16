@@ -14,7 +14,7 @@ export function renderHero(data) {
       <div class="container hero__grid">
         <div class="hero__content">
           <p class="hero__eyebrow reveal-item">${data.hero.eyebrow}</p>
-          <h1 class="hero__title reveal-item" id="hero-title"><span class="hero__animated-name">${animatedName}</span></h1>
+          <h1 class="hero__title reveal-item" id="hero-title" aria-label="${data.personal.name}"><span class="hero__animated-name" aria-hidden="true">${animatedName}</span></h1>
           <p class="hero__role reveal-item">${data.personal.role}<span aria-hidden="true"> · </span>${data.personal.location}</p>
           <p class="hero__description reveal-item">${data.hero.description}</p>
 
