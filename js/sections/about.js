@@ -18,7 +18,10 @@ export function renderAbout(data) {
           ${renderSectionHeading(data.about, "about-title")}
         </div>
         <figure class="about__visual fade-up">
-          <img src="${data.about.image}" alt="${data.about.imageAlt}" width="1240" height="1240" loading="lazy">
+          <picture>
+            <source srcset="${data.about.imageWebp}" type="image/webp">
+            <img src="${data.about.image}" alt="${data.about.imageAlt}" width="1240" height="1240" loading="lazy">
+          </picture>
         </figure>
         <ul class="about__features" aria-label="Professional qualities">
           ${data.about.features.map((feature) => `

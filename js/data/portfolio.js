@@ -29,6 +29,7 @@ export const portfolio = {
     description:
       "I'm a dedicated web developer with a passion for building clean, user-friendly and performant websites. I enjoy solving problems and turning creative ideas into functional products.",
     image: "assets/images/profile/Desktop mode.png",
+    imageWebp: "assets/images/profile/Desktop%20mode.webp",
     imageAlt: "Swapon Kumar Das working at a laptop",
     features: [
       { icon: "code", title: "Clean Code", description: "Maintainable" },
@@ -78,7 +79,6 @@ export const portfolio = {
       technologies: ["React", "TypeScript", "Tailwind CSS"],
       image: "assets/images/projects/Dashboard.png",
       imageAlt: "Demo dashboard interface with a navigation sidebar, metric cards, and charts",
-      liveUrl: "https://www.facebook.com/olpo.kotha.581/",
       placeholder: true,
     },
     {

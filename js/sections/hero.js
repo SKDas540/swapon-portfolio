@@ -6,7 +6,7 @@ export function renderHero(data) {
   if (!hero) return;
 
   const animatedName = Array.from(data.personal.name, (letter) =>
-    `<span class="hero__letter${letter === " " ? " hero__letter--space" : ""}" aria-hidden="true">${letter === " " ? "" : letter}</span>`
+    `<span class="hero__letter${letter === " " ? " hero__letter--space" : ""}">${letter}</span>`
   ).join("");
 
   hero.innerHTML = `
@@ -14,7 +14,7 @@ export function renderHero(data) {
       <div class="container hero__grid">
         <div class="hero__content">
           <p class="hero__eyebrow reveal-item">${data.hero.eyebrow}</p>
-          <h1 class="hero__title reveal-item" id="hero-title" aria-label="${data.personal.name}"><span class="hero__animated-name" aria-hidden="true">${animatedName}</span></h1>
+          <h1 class="hero__title reveal-item" id="hero-title"><span class="hero__animated-name">${animatedName}</span></h1>
           <p class="hero__role reveal-item">${data.personal.role}<span aria-hidden="true"> · </span>${data.personal.location}</p>
           <p class="hero__description reveal-item">${data.hero.description}</p>
 
@@ -30,15 +30,18 @@ export function renderHero(data) {
         <div class="hero__visual reveal-item">
           <figure class="hero__profile-card">
             <div class="hero__portrait-frame">
-              <img
-                class="hero__portrait"
-                src="assets/images/profile/Swapon%202.png"
-                alt="Portrait of ${data.personal.name}"
-                width="1254"
-                height="1254"
-                fetchpriority="high"
-                decoding="async"
-              >
+              <picture>
+                <source srcset="assets/images/profile/Swapon%202.webp" type="image/webp">
+                <img
+                  class="hero__portrait"
+                  src="assets/images/profile/Swapon%202.png"
+                  alt="Portrait of ${data.personal.name}"
+                  width="1254"
+                  height="1254"
+                  fetchpriority="high"
+                  decoding="async"
+                >
+              </picture>
               <figcaption class="hero__tagline">Design · Build · Deliver</figcaption>
             </div>
           </figure>

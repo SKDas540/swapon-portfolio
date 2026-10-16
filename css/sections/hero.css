@@ -32,7 +32,7 @@
 
 .hero__animated-name { display: inline; }
 .hero__letter { display: inline-block; }
-.hero__letter--space { width: .27em; }
+.hero__letter--space { width: .27em; white-space: pre; }
 
 .hero__role {
   margin-top: .8rem;
